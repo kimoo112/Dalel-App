@@ -36,7 +36,7 @@ class _SplashViewState extends State<SplashView> {
       body: Center(
         child: Text(
           AppStrings.appName,
-          style: CustomTextStyles.pacifico400style64,
+          style: CustomTextStyles.pacifico400style64Brown,
         ),
       ),
     );

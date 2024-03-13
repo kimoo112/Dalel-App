@@ -3,27 +3,37 @@ import 'package:dalel/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomBtn extends StatelessWidget {
-  const CustomBtn({super.key, this.color, required this.text, this.onPressed});
+  const CustomBtn({
+    Key? key,
+    this.color,
+    required this.text,
+    this.onPressed, this.marginSize, this.textColor,
+  }) : super(key: key);
+
   final Color? color;
   final String text;
+  final Color? textColor;
   final VoidCallback? onPressed;
+  final double? marginSize;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 56,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: color ?? AppColors.primaryColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        margin: EdgeInsets.all(marginSize ?? 8),
+        width: double.infinity,
+        height: 56,
+        decoration: BoxDecoration(
+          color: color ?? AppColors.primaryColor,
+          borderRadius: BorderRadius.circular(10),
         ),
+        alignment: Alignment.center,
         child: Text(
           text,
-          style: CustomTextStyles.poppins500style24
-              .copyWith(fontSize: 18, color: AppColors.offWhite),
+          style: CustomTextStyles.poppins500style24.copyWith(
+            fontSize: 18,
+            color: textColor ??AppColors.offWhite,
+          ),
         ),
       ),
     );

@@ -41,7 +41,7 @@ class CustomDataListViewItem extends StatelessWidget {
                 textAlign: TextAlign.left,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
-                style: CustomTextStyles.poppins500style18.copyWith(
+                style: CustomTextStyles.poppins500style18Brown.copyWith(
                   fontSize: 16,
                   color: AppColors.deepBrown,
                 ),
