@@ -19,11 +19,10 @@ class CartView extends StatelessWidget {
               height: mQHeight * .7,
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: 12,
+                itemCount: 12, 
                 itemBuilder: (BuildContext context, int index) {
-                  return CustomListTile(
-                      title: 'Product ${index + 1}',
-                      leading: Icons.abc_outlined);
+                  return  CustomListTile(
+                      title: 'Product ${index }', leading: Icons.abc_outlined);
                 },
               ),
             ),
