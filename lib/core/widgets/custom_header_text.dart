@@ -6,9 +6,8 @@ class CustomHeaderText extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: CustomTextStyles.poppins400style20,
-    );
+    return Text(text,
+        style:
+            CustomTextStyles.poppins400style20.copyWith(fontFamily: 'Almarai'));
   }
 }

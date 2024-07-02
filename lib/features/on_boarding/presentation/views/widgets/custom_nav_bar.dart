@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class CustomNavBar extends StatelessWidget {
   const CustomNavBar({
-    super.key, required this.onTap,
+    super.key,
+    required this.onTap,
   });
   final VoidCallback onTap;
   @override

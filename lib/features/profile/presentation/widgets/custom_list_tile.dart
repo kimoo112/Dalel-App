@@ -5,14 +5,18 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 
 class CustomListTile extends StatelessWidget {
-  const CustomListTile({Key? key, required this.title, required this.leading}) : super(key: key);
+  const CustomListTile(
+      {Key? key, required this.title, required this.leading, this.onTap})
+      : super(key: key);
   final String title;
   final IconData leading;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: onTap,
       leading: Icon(
-       leading,
+        leading,
         color: AppColors.deepBrown,
       ),
       title: Text(

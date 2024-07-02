@@ -1,5 +1,5 @@
-import 'package:dalel/core/models/data_model.dart';
 import 'package:dalel/core/widgets/custom_data_list_view_item.dart';
+import 'package:dalel/features/home/presentation/views/historical_periods_details_view.dart';
 import 'package:flutter/material.dart';
 
 class CustomDataListView extends StatelessWidget {
@@ -8,7 +8,7 @@ class CustomDataListView extends StatelessWidget {
     required this.dataList,
     required this.routePath,
   });
-  final List<DataModel> dataList;
+  final List dataList;
   final String routePath;
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class CustomDataListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return CustomDataListViewItem(
             model: dataList[index],
-            routePath:routePath,
+            routePath: routePath,
           );
         },
       ),
