@@ -1,6 +1,11 @@
 class Assets {
   Assets._();
-  
+
+  /// Assets for images800pxRichardCoeurDeLion
+  /// assets/images/800px-Richard_coeur_de_lion.png
+  static const String images800pxRichardCoeurDeLion =
+      "assets/images/800px-Richard_coeur_de_lion.png";
+
   /// Assets for imagesDetails1
   /// assets/images/details1.svg
   static const String imagesDetails1 = "assets/images/details1.svg";
@@ -35,11 +40,28 @@ class Assets {
 
   /// Assets for imagesHomeIconActive
   /// assets/images/home-icon-active.svg
-  static const String imagesHomeIconActive = "assets/images/home-icon-active.svg";
+  static const String imagesHomeIconActive =
+      "assets/images/home-icon-active.svg";
+
+  /// Assets for imagesImage2
+  /// assets/images/image2.png
+  static const String imagesImage2 = "assets/images/image2.png";
 
   /// Assets for imagesMenu
   /// assets/images/menu.svg
   static const String imagesMenu = "assets/images/menu.svg";
+
+  /// Assets for imagesMiniStatue
+  /// assets/images/mini_statue.png
+  static const String imagesMiniStatue = "assets/images/mini_statue.png";
+
+  /// Assets for imagesOldMaps
+  /// assets/images/old_maps.png
+  static const String imagesOldMaps = "assets/images/old_maps.png";
+
+  /// Assets for imagesOldRing
+  /// assets/images/old_ring.png
+  static const String imagesOldRing = "assets/images/old_ring.png";
 
   /// Assets for imagesOnBoarding
   /// assets/images/onBoarding.png
@@ -53,6 +75,12 @@ class Assets {
   /// assets/images/onBoarding2.png
   static const String imagesOnBoarding2 = "assets/images/onBoarding2.png";
 
+  /// Assets for imagesPaintingOfNapoleonBonaparteByJacquesLouisDavid18131
+  /// assets/images/Painting_of_Napoleon_Bonaparte_by_Jacques-Louis_David_18131.png
+  static const String
+      imagesPaintingOfNapoleonBonaparteByJacquesLouisDavid18131 =
+      "assets/images/Painting_of_Napoleon_Bonaparte_by_Jacques-Louis_David_18131.png";
+
   /// Assets for imagesPerson
   /// assets/images/person.svg
   static const String imagesPerson = "assets/images/person.svg";
@@ -60,6 +88,15 @@ class Assets {
   /// Assets for imagesPersonActive
   /// assets/images/person-active.svg
   static const String imagesPersonActive = "assets/images/person-active.svg";
+
+  /// Assets for imagesPosters
+  /// assets/images/posters.png
+  static const String imagesPosters = "assets/images/posters.png";
+
+  /// Assets for imagesSalahalDinmohamedsaad
+  /// assets/images/SalahalDinmohamedsaad.png
+  static const String imagesSalahalDinmohamedsaad =
+      "assets/images/SalahalDinmohamedsaad.png";
 
   /// Assets for imagesSearch
   /// assets/images/search.svg
@@ -75,11 +112,15 @@ class Assets {
 
   /// Assets for imagesShoppingCartActive
   /// assets/images/shopping-cart-active.svg
-  static const String imagesShoppingCartActive = "assets/images/shopping-cart-active.svg";
+  static const String imagesShoppingCartActive =
+      "assets/images/shopping-cart-active.svg";
 
-  /// Assets for imagesSuccessOrder
-  /// assets/images/successOrder.png
+  /// Assets for imagesSucccesOrder
+  /// assets/images/succcesOrder.png
   static const String imagesSucccesOrder = "assets/images/succcesOrder.png";
+
+  /// Assets for imagesSucccesOrderpng
+  /// assets/images/Succces_orderpng.png
 
   /// Assets for imagesVector1
   /// assets/images/vector1.svg

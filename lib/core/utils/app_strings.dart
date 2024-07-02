@@ -43,7 +43,7 @@ abstract class AppStrings {
       historicalPeriods = "Historical periods",
       historicalCharacters = "Historical Characters",
       historyBooks = "History Books",
-      historicalSouvenirs = "Historical Souvenirs",
+      historicalKings = "Historical Kings",
       //!Cart
       myCart = "My Cart",
       totalPayment = "Total Payment",

@@ -28,20 +28,26 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^8.1.4
   cached_network_image: ^3.3.0
   cloud_firestore: ^4.9.3
   cupertino_icons: ^1.0.2
+  dio: ^5.4.3+1
   firebase_auth: ^4.10.0
   firebase_core: ^2.16.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.3
+  flutter_bloc: ^8.1.6
+  flutter_paypal_payment: ^1.0.6
   flutter_svg: ^2.0.7
   fluttertoast: ^8.2.2
   get_it: ^7.6.4
   go_router: ^10.1.2
   iconly: ^1.0.1
+  image_picker: ^1.1.2
   persistent_bottom_nav_bar: ^5.0.2
+  provider: ^6.1.2
+  qr_code_scanner: ^1.0.1
   shared_preferences: ^2.2.1
   shimmer: ^3.0.0
   smooth_page_indicator: ^1.1.0
@@ -83,6 +89,16 @@ flutter:
     - family: Saira
       fonts:
         - asset: assets/fonts/Saira_Condensed-Regular.ttf
+    - family: Almarai
+      fonts:
+        - asset: assets/fonts/Almarai/Almarai-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Almarai/Almarai-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/Almarai/Almarai-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Almarai/Almarai-ExtraBold.ttf
+          weight: 900
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_assets:

@@ -22,8 +22,7 @@ class Dalel extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) =>
-                HistoricalCubit(DioConsumer(dio: Dio())),
+            create: (context) => HistoricalCubit(DioConsumer(dio: Dio())),
           ),
           BlocProvider(
             create: (context) => AuthCubit(),
