@@ -35,3 +35,13 @@ final class ResetPasswordFailureState extends AuthState {
 final class TermsAndConditionUpdateState extends AuthState {}
 
 final class ObscurePasswordTextUpdateState extends AuthState {}
+
+final class ProfileImageEmpty extends AuthState {}
+
+final class ProfileImageLoading extends AuthState {}
+
+final class ProfileImagePicked extends AuthState {
+  final String imagePath;
+
+  ProfileImagePicked({required this.imagePath});
+}

@@ -4,7 +4,8 @@ import 'package:dalel/features/on_boarding/presentation/views/widgets/custom_smo
 import 'package:flutter/material.dart';
 
 class OnBoardingWidgetBody extends StatelessWidget {
-  const OnBoardingWidgetBody({super.key, required this.controller, this.onPageChanged});
+  const OnBoardingWidgetBody(
+      {super.key, required this.controller, this.onPageChanged});
   final PageController controller;
   final Function(int)? onPageChanged;
   @override
@@ -36,7 +37,7 @@ class OnBoardingWidgetBody extends StatelessWidget {
               const SizedBox(height: 32),
               Text(
                 onBoardingData[index].title,
-                style: CustomTextStyles.poppins500style24
+                style: CustomTextStyles.poppins500style24Black
                     .copyWith(fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
                 maxLines: 2,

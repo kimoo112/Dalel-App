@@ -1,7 +1,6 @@
 import 'package:dalel/core/utils/app_colors.dart';
 import 'package:dalel/core/utils/app_text_styles.dart';
-import 'package:dalel/features/cart/data/models/historical_souvenirs.dart';
-import 'package:dalel/features/cart/data/models/history_books.dart';
+import 'package:dalel/features/cart/data/models/history_bazar_model.dart';
 import 'package:dalel/features/cart/presentation/widgets/history_listview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,13 @@ class BazarView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final souvenirsList = getHistoryBazarProducts
+        .where((product) => product.isSouvenirs)
+        .toList();
+    final booksList = getHistoryBazarProducts
+        .where((product) => product.isSouvenirs == false)
+        .toList();
+
     return Scaffold(
         floatingActionButton: FloatingActionButton(
           backgroundColor: AppColors.primaryColor,
@@ -35,16 +41,14 @@ class BazarView extends StatelessWidget {
                   style: CustomTextStyles.poppins400style20,
                 ),
                 HistoryListView(
-                  historyList: getHistoryBooks,
-                  isSouvenirs: false,
+                  historyList: booksList,
                 ),
                 Text(
                   'Historical Souvenirs',
                   style: CustomTextStyles.poppins400style20,
                 ),
                 HistoryListView(
-                  historyList: getHistoricalSouvenirs,
-                  isSouvenirs: true,
+                  historyList: souvenirsList,
                 ),
               ],
             ),

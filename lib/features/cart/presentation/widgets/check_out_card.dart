@@ -1,8 +1,11 @@
+import 'package:dalel/core/functions/navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 import '../../../../core/widgets/custom_btn.dart';
+import '../logic/cart_provider.dart';
 
 class CheckOutCard extends StatelessWidget {
   const CheckOutCard({
@@ -36,9 +39,13 @@ class CheckOutCard extends StatelessWidget {
                     'Total Payment',
                     style: CustomTextStyles.poppinsBoldStyle16Brown,
                   ),
-                  Text(
-                    '\$ 250',
-                    style: CustomTextStyles.poppins400style16Brown,
+                  Consumer<TheCart>(
+                    builder: (BuildContext context, cart, Widget? child) {
+                      return Text(
+                        '\$ ${cart.priceOfProducts.toInt()}',
+                        style: CustomTextStyles.poppins400style16Brown,
+                      );
+                    },
                   ),
                 ],
               ),
@@ -47,7 +54,9 @@ class CheckOutCard extends StatelessWidget {
               text: 'Checkout Now',
               color: AppColors.primaryColor,
               textColor: AppColors.offWhite,
-              onPressed: () {},
+              onPressed: () {
+                customNavigate(context, "/orderSuccessView");
+              },
             )
           ],
         ),

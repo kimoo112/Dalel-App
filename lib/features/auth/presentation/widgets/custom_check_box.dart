@@ -15,7 +15,7 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
   @override
   Widget build(BuildContext context) {
     return Checkbox(
-      activeColor: AppColors.primaryColor,
+        activeColor: AppColors.primaryColor,
         value: value,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         side: BorderSide(
