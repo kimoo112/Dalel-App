@@ -1,6 +1,5 @@
 class EndPoint {
   static String baseUrl = "https://elgaml.atwebpages.com/data_view.php";
-
 }
 
 class ApiKeys {

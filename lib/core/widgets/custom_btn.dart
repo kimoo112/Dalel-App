@@ -7,7 +7,9 @@ class CustomBtn extends StatelessWidget {
     Key? key,
     this.color,
     required this.text,
-    this.onPressed, this.marginSize, this.textColor,
+    this.onPressed,
+    this.marginSize,
+    this.textColor,
   }) : super(key: key);
 
   final Color? color;
@@ -30,9 +32,9 @@ class CustomBtn extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           text,
-          style: CustomTextStyles.poppins500style24.copyWith(
+          style: CustomTextStyles.poppins500style24Black.copyWith(
             fontSize: 18,
-            color: textColor ??AppColors.offWhite,
+            color: textColor ?? AppColors.offWhite,
           ),
         ),
       ),

@@ -3,6 +3,9 @@ import 'package:dalel/features/auth/presentation/auth_cubit/cubit/auth_state.dar
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
+
+import '../../../../../core/database/cache/cache_helper.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
@@ -10,6 +13,8 @@ class AuthCubit extends Cubit<AuthState> {
   String? lastName;
   String? emailAddress;
   String? password;
+  ImagePicker picker = ImagePicker();
+  String imagePath = '';
   bool? termsAndConditionCheckBoxValue = false;
   bool? obscurePasswordTextValue = true;
   GlobalKey<FormState> signupFormKey = GlobalKey();
@@ -35,8 +40,8 @@ class AuthCubit extends Cubit<AuthState> {
 
   void _signUpHandleException(FirebaseAuthException e) {
     if (e.code == 'weak-password') {
-      emit(SignupFailureState(
-          errMessage: 'The password provided is too weak.'));
+      emit(
+          SignupFailureState(errMessage: 'The password provided is too weak.'));
     } else if (e.code == 'email-already-in-use') {
       emit(SignupFailureState(
           errMessage: 'The account already exists for that email.'));
@@ -108,5 +113,28 @@ class AuthCubit extends Cubit<AuthState> {
       "first_name": firstName,
       "last_name": lastName,
     });
+  }
+
+  Future<void> pickImageFromGallery() async {
+    emit(ProfileImageEmpty());
+    try {
+      final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+      if (pickedFile != null) {
+        imagePath = pickedFile.path;
+        CacheHelper().saveData(key: "Image $imagePath ", value: imagePath);
+        loadImage();
+        emit(ProfileImagePicked(imagePath: imagePath));
+      } else {}
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  loadImage() async {
+    if (CacheHelper().getData(key: "Image $imagePath ") != null) {
+      imagePath = CacheHelper().getData(key: "Image $imagePath ")!;
+      emit(ProfileImagePicked(imagePath: imagePath));
+    } else {}
   }
 }

@@ -20,6 +20,12 @@ abstract class CustomTextStyles {
     color: AppColors.deepGrey,
     fontFamily: "Poppins",
   );
+  static final poppins400style14LightGrey = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColors.lightGrey,
+    fontFamily: "Poppins",
+  );
   static final poppins400style16LightGrey = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
@@ -38,10 +44,16 @@ abstract class CustomTextStyles {
     color: AppColors.deepBrown,
     fontFamily: "Poppins",
   );
-  static const poppins500style24 = TextStyle(
+  static const poppins500style24Black = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w500,
     color: Colors.black,
+    fontFamily: "Poppins",
+  );
+  static final poppins500style24 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+    color: AppColors.deepBrown,
     fontFamily: "Poppins",
   );
   static final poppins500style14Brown = TextStyle(
@@ -79,5 +91,18 @@ abstract class CustomTextStyles {
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontFamily: "Pacifico",
+  );
+
+  static final pacifico400style64 = TextStyle(
+    fontSize: 64,
+    fontWeight: FontWeight.w400,
+    color: AppColors.deepBrown,
+    fontFamily: "Pacifico",
+  );
+  static final poppins500style14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.deepBrown,
+    fontFamily: "Poppins",
   );
 }
