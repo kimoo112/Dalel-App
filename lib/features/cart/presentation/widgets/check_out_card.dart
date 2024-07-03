@@ -50,14 +50,18 @@ class CheckOutCard extends StatelessWidget {
                 ],
               ),
             ),
-            CustomBtn(
-              text: 'Checkout Now',
-              color: AppColors.primaryColor,
-              textColor: AppColors.offWhite,
-              onPressed: () {
-                customNavigate(context, "/orderSuccessView");
-              },
-            )
+            Consumer<TheCart>(
+                builder: (BuildContext context, cart, Widget? child) {
+              return CustomBtn(
+                text: 'Checkout Now',
+                color: AppColors.primaryColor,
+                textColor: AppColors.offWhite,
+                onPressed: () {
+                  customNavigate(context, "/cardScreen");
+                  cart.deleteAllFromCart();
+                },
+              );
+            })
           ],
         ),
       ),

@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/cart/presentation/views/order_success_view.dart';
+import '../../features/cart/presentation/widgets/credit_card.dart';
 import '../../features/home/presentation/views/home_navbar.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/qr/presention/view/qr_scanner_view.dart';
@@ -57,6 +58,10 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const OrderSuccessView(),
     ),
     GoRoute(
+      path: "/cardScreen",
+      builder: (context, state) => const CardScreen(),
+    ),
+    GoRoute(
       path: "/homeView",
       builder: (context, state) => const HomeView(),
     ),
@@ -64,6 +69,5 @@ final GoRouter router = GoRouter(
       path: "/qrScannerView",
       builder: (context, state) => const QRScannerView(),
     ),
-      
   ],
 );

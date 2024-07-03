@@ -22,6 +22,7 @@ class _ProfileViewState extends State<ProfileView> {
   void initState() {
     super.initState();
     context.read<AuthCubit>().loadImage();
+    context.read<AuthCubit>().fetchUserData();
   }
 
   @override

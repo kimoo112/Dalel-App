@@ -29,7 +29,7 @@ quickly and fast good product""",
           CustomBtn(
             text: 'Back To Home',
             onPressed: () {
-              customNavigate(context, "/homeNavBar");
+              customReplacementNavigate(context, "/homeNavBar");
             },
           )
         ],

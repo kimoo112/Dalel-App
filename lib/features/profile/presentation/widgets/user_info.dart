@@ -10,15 +10,25 @@ import 'package:iconly/iconly.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 
-class UserInfoListTile extends StatelessWidget {
+class UserInfoListTile extends StatefulWidget {
   const UserInfoListTile({
     super.key,
   });
 
   @override
+  State<UserInfoListTile> createState() => _UserInfoListTileState();
+}
+
+class _UserInfoListTileState extends State<UserInfoListTile> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<AuthCubit>().fetchUserData();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthState>(
-      listener: (context, state) {},
+    return BlocBuilder<AuthCubit, AuthState>(
       builder: (context, state) {
         return SingleChildScrollView(
           child: Row(
@@ -28,11 +38,12 @@ class UserInfoListTile extends StatelessWidget {
                 alignment: AlignmentDirectional.bottomEnd,
                 children: [
                   CircleAvatar(
-                      radius: 50,
-                      backgroundImage: context.read<AuthCubit>().imagePath == ''
-                          ? null
-                          : FileImage(File(context.read<AuthCubit>().imagePath))
-                              as ImageProvider),
+                    radius: 50,
+                    backgroundImage: context.read<AuthCubit>().imagePath == ''
+                        ? null
+                        : FileImage(File(context.read<AuthCubit>().imagePath))
+                            as ImageProvider,
+                  ),
                   FloatingActionButton(
                     shape: const CircleBorder(),
                     backgroundColor: AppColors.primaryColor,
@@ -50,12 +61,19 @@ class UserInfoListTile extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  if (state is UserLoading)
+                    CircularProgressIndicator(
+                      color: AppColors.primaryColor,
+                    )
+                  else if (state is UserLoaded)
+                    UserProfileInfo(
+                      firstName: state.firstName!,
+                      lastName: state.lastName!,
+                    )
+                  else if (state is UserError)
+                    Text('Error: ${state.message}'),
                   Text(
-                    "Abdo Gamal",
-                    style: CustomTextStyles.poppinsBoldStyle16Brown,
-                  ),
-                  Text(
-                    "Abdo125@gmail.com",
+                    FirebaseAuth.instance.currentUser!.email!,
                     style: CustomTextStyles.poppins400style16LightGrey,
                   ),
                 ],
@@ -68,6 +86,30 @@ class UserInfoListTile extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class UserProfileInfo extends StatelessWidget {
+  final String firstName;
+  final String lastName;
+
+  const UserProfileInfo({
+    Key? key,
+    required this.firstName,
+    required this.lastName,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "$firstName $lastName",
+          style: CustomTextStyles.poppins500style24Black,
+        ),
+      ],
     );
   }
 }
