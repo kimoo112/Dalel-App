@@ -45,8 +45,7 @@ final class ProfileImagePicked extends AuthState {
 
   ProfileImagePicked({required this.imagePath});
 }
-
-class UserLoading extends AuthState {}
+ class UserLoading extends AuthState {}
 
 class UserLoaded extends AuthState {
   final String? firstName;
@@ -59,4 +58,4 @@ class UserError extends AuthState {
   final String message;
 
   UserError(this.message);
-}
+} 
