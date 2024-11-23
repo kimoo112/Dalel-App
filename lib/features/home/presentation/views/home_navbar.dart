@@ -6,7 +6,7 @@ import 'package:dalel/features/search/presentaion/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 import '../../../cart/presentation/views/bazar_view.dart';
 import '../logic/cubit/historical_cubit.dart';
@@ -38,10 +38,10 @@ class _HomeNavBarWidgetState extends State<HomeNavBarWidget> {
       controller: _controller,
       navBarStyle: NavBarStyle.style12,
       backgroundColor: AppColors.primaryColor,
-      decoration: const NavBarDecoration(
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-      ),
+      // decoration: const NavBarDecoration(
+      //   borderRadius: BorderRadius.only(
+      //       topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+      // ),
     );
   }
 }

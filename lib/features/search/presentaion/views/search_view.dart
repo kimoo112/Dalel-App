@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../home/presentation/logic/cubit/historical_cubit.dart';
+import '../../../home/presentation/views/historical_periods_details_view.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -49,6 +50,18 @@ class SearchView extends StatelessWidget {
                                     style: CustomTextStyles.poppins300style16
                                         .copyWith(
                                             color: AppColors.primaryColor)),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            HistoricalDetailsView(
+                                          description: item.content!,
+                                          image: item.image!,
+                                          name: item.title!,
+                                        ),
+                                      ));
+                                },
                               )),
                           ...state.charactersResults.map((item) => ListTile(
                                 title: Text(
@@ -59,6 +72,18 @@ class SearchView extends StatelessWidget {
                                           color: AppColors.deepBrown),
                                 ),
                                 subtitle: const Text('Character'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            HistoricalDetailsView(
+                                          description: item.content!,
+                                          image: item.image!,
+                                          name: item.kingName!,
+                                        ),
+                                      ));
+                                },
                               )),
                           ...state.kingsResults.map((item) => ListTile(
                                 title: Text(
@@ -69,6 +94,18 @@ class SearchView extends StatelessWidget {
                                           color: AppColors.deepBrown),
                                 ),
                                 subtitle: const Text('King'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            HistoricalDetailsView(
+                                          description: item.content!,
+                                          image: item.image!,
+                                          name: item.name!,
+                                        ),
+                                      ));
+                                },
                               )),
                         ],
                       ),

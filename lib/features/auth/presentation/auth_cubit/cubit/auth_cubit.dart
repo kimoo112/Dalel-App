@@ -90,6 +90,7 @@ class AuthCubit extends Cubit<AuthState> {
         emit(SigninFailureState(errMessage: 'Check your Email and password!'));
       }
     } catch (e) {
+    print(e);
       emit(
         SigninFailureState(
           errMessage: e.toString(),
